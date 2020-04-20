@@ -4,10 +4,7 @@ import { StyleSheet, Text, View } from "react-native";
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>
-        To share a photo from your phone with a friend, just press the button
-        below!
-      </Text>
+      <Text style={styles.text}>Alex's RN app with Firebase integration</Text>
     </View>
   );
 }
