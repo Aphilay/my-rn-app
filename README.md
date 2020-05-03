@@ -1,1 +1,3 @@
 # react-native-firebase
+
+This app contains a skeleton for a React Native mobile application containing standard features such as navigation, styling, and a firebase db connection.
