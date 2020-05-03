@@ -3,7 +3,7 @@ import { View, StyleSheet, Text, Button } from "react-native";
 
 const DetailsScreen = ({ navigation }) => {
   return (
-    <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
+    <View style={styles.center}>
       <Text>Details Screen</Text>
       <Button
         title="Go to Details... again"
@@ -16,5 +16,8 @@ const DetailsScreen = ({ navigation }) => {
   );
 };
 
-const styles = StyleSheet.create();
+const styles = StyleSheet.create({
+  center: { flex: 1, alignItems: "center", justifyContent: "center" },
+});
+
 export default DetailsScreen;

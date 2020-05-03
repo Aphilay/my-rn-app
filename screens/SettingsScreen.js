@@ -1,19 +1,14 @@
 import React from "react";
 import { View, StyleSheet, Text, Button } from "react-native";
 
-const HomeScreen = ({ navigation, props }) => {
-  console.log(props);
+const SettingsScreen = ({ navigation }) => {
   return (
     <View style={styles.center}>
-      <Text>Hello, </Text>
-      <Text>Home Screen</Text>
+      <Text>SettingsScreen</Text>
+      <Button title="Go to Home" onPress={() => navigation.navigate("Home")} />
       <Button
         title="Go to Details"
         onPress={() => navigation.navigate("Details")}
-      />
-      <Button
-        title="Go to Settings"
-        onPress={() => navigation.navigate("Settings")}
       />
     </View>
   );
@@ -22,5 +17,4 @@ const HomeScreen = ({ navigation, props }) => {
 const styles = StyleSheet.create({
   center: { flex: 1, alignItems: "center", justifyContent: "center" },
 });
-
-export default HomeScreen;
+export default SettingsScreen;
