@@ -1,23 +1,25 @@
+import "react-native-gesture-handler";
 import React from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { NavigationContainer } from "@react-navigation/native";
+import { createStackNavigator } from "@react-navigation/stack";
+import AuthScreen from "./screens/AuthScreen";
+import HomeScreen from "./screens/HomeScreen";
+import DetailsScreen from "./screens/DetailsScreen";
+
+const Stack = createStackNavigator();
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text style={styles.text}>Alex's RN app with Firebase integration</Text>
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName={HomeScreen}>
+        <Stack.Screen
+          name="Home"
+          component={HomeScreen}
+          options={{ title: "Overview" }}
+        />
+        <Stack.Screen name="Details" component={DetailsScreen} />
+        <Stack.Screen name="Auth" component={AuthScreen} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  text: {
-    color: "#888",
-    fontSize: 18,
-  },
-});

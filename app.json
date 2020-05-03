@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "react-native-firebase",
-    "slug": "react-native-firebase",
+    "name": "my-rn-app",
+    "slug": "my-rn-app",
     "sdkVersion": "36.0.0",
     "platforms": ["ios", "android", "web"],
     "version": "1.0.0",
