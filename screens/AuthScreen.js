@@ -1,18 +1,8 @@
 import React, { useState } from "react";
 import { StyleSheet, View, TextInput } from "react-native";
 import { Input, Button } from "react-native-elements";
-import * as firebase from "firebase";
 import Spacer from "../components/Spacer";
-
-const firebaseConfig = {
-  apiKey: "AIzaSyDlSTOGET4Zo7EVbNf2Dp7pqko_z4NfTL8",
-  authDomain: "react-native-firebase-83666.firebaseapp.com",
-  databaseURL: "https://react-native-firebase-83666.firebaseio.com",
-  projectId: "react-native-firebase-83666",
-  storageBucket: "react-native-firebase-83666.appspot.com",
-};
-
-firebase.initializeApp(firebaseConfig);
+import { db } from "../config";
 
 function AuthScreen({ navigation }) {
   // useState hooks to keep track of email and password entered
@@ -22,10 +12,11 @@ function AuthScreen({ navigation }) {
 
   loginUser = (email, password) => {
     try {
-      firebase
-        .auth()
+      db.auth()
         .signInWithEmailAndPassword(email, password)
-        .then((user) => console.log(user));
+        //.then((user) => console.log(user))
+        .then(() => console.log("logged in"))
+        .then(() => navigation.navigate("Home"));
     } catch (error) {
       console.group(error.toString());
     }
@@ -33,7 +24,7 @@ function AuthScreen({ navigation }) {
 
   signUpUser = (email, password) => {
     try {
-      firebase.auth().createUserWithEmailAndPassword(email, password);
+      db.auth().createUserWithEmailAndPassword(email, password);
       console.log("signed up user");
     } catch (error) {
       console.log(error.toString());
